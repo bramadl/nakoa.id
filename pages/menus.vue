@@ -80,9 +80,6 @@ const instagramPictures = useInstagramPictures();
       >
         <BaseHeader>
           <template #title> <BaseHeading text="Promo Hari Ini" /> </template>
-          <template #action>
-            <a href="#" class="text-brand">Lihat Menu</a>
-          </template>
         </BaseHeader>
 
         <div class="grid md:grid-cols-3 gap-8 lg:gap-16">
