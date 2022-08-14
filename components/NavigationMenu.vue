@@ -26,19 +26,19 @@ const closeMenu = () => {
             <h2 class="font-bold text-lg">Nakoa Cafe</h2>
             <ul class="flex flex-col gap-4 mt-8">
               <li class="overflow-hidden">
-                <a class="inline-block uppercase font-light delay-75" href="#">Home</a>
+                <NuxtLink class="inline-block uppercase font-light delay-75" to="/">Beranda</NuxtLink>
               </li>
               <li class="overflow-hidden">
-                <a class="inline-block uppercase font-light delay-100" href="#">About</a>
+                <NuxtLink class="inline-block uppercase font-light delay-100" to="/tentang">Tentang</NuxtLink>
               </li>
               <li class="overflow-hidden">
-                <a class="inline-block uppercase font-light delay-150" href="#">Menus</a>
+                <NuxtLink class="inline-block uppercase font-light delay-150" to="/menus">Menus</NuxtLink>
               </li>
               <li class="overflow-hidden">
-                <a class="inline-block uppercase font-light delay-200" href="#">Blogs</a>
+                <NuxtLink class="inline-block uppercase font-light delay-200" to="/blogs">Blogs</NuxtLink>
               </li>
               <li class="overflow-hidden">
-                <a class="inline-block uppercase font-light delay-300" href="#">Locations</a>
+                <NuxtLink class="inline-block uppercase font-light delay-300" to="/Lokasi">Lokasi</NuxtLink>
               </li>
             </ul>
           </div>

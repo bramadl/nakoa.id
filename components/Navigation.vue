@@ -9,11 +9,11 @@ type NavigationLinkType = {
 
 const navigationLinks = ref<NavigationLinkType>([
   { type: "link", to: "/", content: "Beranda" },
-  { type: "link", to: "/about", content: "Tentang" },
+  { type: "link", to: "/tentang", content: "Tentang" },
   { type: "link", to: "/menus", content: "Menu" },
   { type: "logo", to: "/", content: null },
   { type: "link", to: "/blogs", content: "Artikel" },
-  { type: "link", to: "/locations", content: "Lokasi" },
+  { type: "link", to: "/lokasi", content: "Lokasi" },
 ]);
 </script>
 

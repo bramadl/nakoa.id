@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const menuLinks = ref([
-  { to: "/", text: "Home" },
-  { to: "/about", text: "About" },
+  { to: "/", text: "Beranda" },
+  { to: "/tentang", text: "Tentang" },
   { to: "/menus", text: "Menus" },
   { to: "/blogs", text: "Blogs" },
-  { to: "/locations", text: "Locations" },
+  { to: "/lokasi", text: "Lokasi" },
 ]);
 
 const purchaseChannels = ref([
