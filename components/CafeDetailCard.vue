@@ -11,16 +11,12 @@ defineProps<MenuCardDetailProps>();
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center gap-8">
+  <div class="flex flex-col items-start md:items-center justify-center gap-3 lg:gap-4 md:text-center">
     <p class="relative">
-      <span
-        class="after:absolute after:bottom-0 after:left-0 after:w-full after:border-b-2 after:border-white"
-      />
-      <span class="text-3xl tracking-wide">{{ detail.name }}</span>
+      <span class="text-2xl lg:text-3xl tracking-wide font-bold uppercase">{{ detail.name }} ({{ detail.amount }})</span>
     </p>
     <p class="font-light text-sm">
       {{ detail.description }}
     </p>
-    <p class="text-4xl font-bold">{{ detail.amount }}</p>
   </div>
 </template>

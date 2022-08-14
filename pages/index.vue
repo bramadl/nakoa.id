@@ -73,7 +73,7 @@ const bestSellerMenus = ref([
     thumbnail:
       "https://nakoa.id/themes/laratify-octobercms-octaskin/assets/img/pages/menu/mainpage/img%20(1).jpg",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nemo quidem blanditiis qui. Voluptates ipsam nihil, hic reiciendis in ratione molestiae animi alias nulla?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nemo quidem blanditiis qui. Voluptates ipsam nihil.",
     price: "Rp 20.000",
   },
   {
@@ -81,7 +81,7 @@ const bestSellerMenus = ref([
     thumbnail:
       "https://nakoa.id/themes/laratify-octobercms-octaskin/assets/img/pages/menu/mainpage/img%20(2).jpg",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nemo quidem blanditiis qui. Voluptates ipsam nihil, hic reiciendis in ratione molestiae animi alias nulla?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nemo quidem blanditiis qui. Voluptates ipsam nihil.",
     price: "Rp 20.000",
   },
   {
@@ -89,7 +89,7 @@ const bestSellerMenus = ref([
     thumbnail:
       "https://nakoa.id/themes/laratify-octobercms-octaskin/assets/img/pages/menu/mainpage/img%20(3).jpg",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nemo quidem blanditiis qui. Voluptates ipsam nihil, hic reiciendis in ratione molestiae animi alias nulla?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nemo quidem blanditiis qui. Voluptates ipsam nihil.",
     price: "Rp 20.000",
   },
 ]);
@@ -164,11 +164,11 @@ const onSlideNext = () => {
       <!-- Nakoa Brand Video -->
 
       <!-- Hero Title -->
-      <div class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
-        <div class="container mx-auto -mt-20">
-          <div class="flex flex-col items-center justify-center gap-4">
-            <h1 class="font-bold text-6xl">Nakoa Cafe</h1>
-            <p class="font-light text-2xl">
+      <div class="w-full absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
+        <div class="container mx-auto -mt-10 md:-mt-16 px-4 md:px-8 lg:px-12">
+          <div class="flex flex-col items-center justify-center gap-4 text-center">
+            <h1 class="font-bold text-5xl md:text-8xl">Nakoa Cafe</h1>
+            <p class="font-light text-xl md:text-2xl">
               Tempat nongkrong nyaman dan ramah di kantong
             </p>
           </div>
@@ -177,19 +177,35 @@ const onSlideNext = () => {
       <!-- ./Hero Title -->
 
       <!-- Hero Locations -->
-      <div class="w-full h-auto absolute left-1/2 bottom-0 -translate-x-1/2">
-        <div class="container mx-auto py-12 border-t border-white">
-          <div class="grid grid-cols-3 gap-16">
+      <div class="w-full absolute left-1/2 bottom-0 -translate-x-1/2">
+        <div class="hidden md:block container mx-auto px-4 md:px-8 lg:px-12">
+          <div class="grid grid-cols-3 gap-8 lg:gap-16 py-12 border-t border-white">
             <div
               v-for="location in nakoaLocations"
               :key="location.address"
               class="flex flex-col gap-4 text-center text-sm"
             >
               <h2 class="font-medium uppercase">{{ location.name }}</h2>
-              <p class="w-3/4 mx-auto font-light">{{ location.address }}</p>
+              <p class="md:w-3/4 mx-auto font-light">{{ location.address }}</p>
             </div>
           </div>
         </div>
+
+        <!-- Location but Carousel Version -->
+        <div class="md:hidden container mx-auto px-4 md:px-8 lg:px-12 py-6">
+          <swiper :slides-per-view="1">
+            <swiper-slide
+              v-for="location in nakoaLocations"
+              :key="location.name"
+            >
+              <div class="flex flex-col gap-4 text-center text-sm">
+                <h2 class="font-medium uppercase">{{ location.name }}</h2>
+                <p class="font-light">{{ location.address }}</p>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
+        <!-- ./Location but Carousel Version -->
       </div>
       <!-- ./Hero Locations -->
     </section>
@@ -198,18 +214,26 @@ const onSlideNext = () => {
     <!-- About Section -->
     <section
       id="about-section"
-      class="relative w-full h-screen bg-white text-slate-900"
+      class="relative w-full lg:h-screen bg-white text-slate-900"
     >
-      <div class="container mx-auto h-full flex gap-8 py-16">
+      <div
+        class="h-full container mx-auto flex flex-col md:flex-row gap-8 px-4 md:px-8 lg:px-12 py-8 md:py-16"
+      >
         <!-- About and Vision Overview -->
-        <div class="w-8/12 h-full flex flex-col gap-16">
-          <div class="flex flex-col gap-6">
-            <BaseHeading text="What's Nakoa?" />
-            <h2 class="font-bold text-6xl">About, Vision and Nakoa Culture</h2>
+        <div class="md:w-7/12 lg:w-8/12 h-full flex flex-col gap-8 md:gap-16">
+          <div class="flex flex-col gap-4 md:gap-8">
+            <BaseHeading text="Apa Itu Nakoa?" />
+            <h2 class="font-bold text-4xl md:text-6xl">
+              Tentang, Visi dan Kultur Nakoa
+            </h2>
           </div>
           <div class="flex-1 w-full overflow-hidden">
-            <div class="h-full flex items-start gap-8">
-              <article class="flex-1 h-full flex flex-col justify-between">
+            <div
+              class="h-full flex flex-col lg:flex-row items-start gap-4 md:gap-8"
+            >
+              <article
+                class="order-2 lg:order-1 flex-1 h-full flex flex-col justify-between gap-6"
+              >
                 <BaseParagraph>
                   Tempor, tellus ac, imperdiet nec pulvinar faucibus sagittis
                   orci. Cras vitae, quam arcu ullamcorper. Enim, cum blandit
@@ -222,7 +246,9 @@ const onSlideNext = () => {
                   text="Baca lebih lanjut"
                 />
               </article>
-              <figure class="flex-1 h-full overflow-hidden">
+              <figure
+                class="order-1 lg:order-2 w-full aspect-video md:flex-1 md:h-full overflow-hidden"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2848&q=80"
                   alt="TITIT BESAR ALASKAAAA"
@@ -235,7 +261,7 @@ const onSlideNext = () => {
         <!-- ./About and Vision Overview -->
 
         <!-- About Nakoa Culture -->
-        <div class="flex-1 flex flex-col gap-16 border-l border-slate-900 pl-8">
+        <div class="flex-1 flex flex-col gap-8 md:gap-16 border-l border-slate-900 pl-4 md:pl-8">
           <figure class="border w-full max-h-96 overflow-hidden">
             <img
               src="https://images.squarespace-cdn.com/content/v1/60be0295968e974e71404829/1623226628870-RZ5VYT6T6HRVKYORQBVE/bonanza_shop_sq2.jpg?format=750w"
@@ -259,15 +285,15 @@ const onSlideNext = () => {
     <!-- Section Location -->
     <section
       id="location-section"
-      class="relative w-full h-screen bg-neutral-900 text-white"
+      class="relative w-full lg:h-screen bg-neutral-900 text-white"
     >
-      <div class="w-full h-full grid grid-cols-2">
+      <div class="w-full lg:h-full flex flex-col lg:flex-row">
         <!-- Location Information -->
-        <div class="relative w-full h-full">
-          <div class="z-[1] absolute top-20 left-20 group">
+        <div class="relative lg:flex-1 w-full h-60 md:h-96 lg:h-full overflow-hidden">
+          <div class="z-[1] absolute top-4 left-4 md:top-8 md:left-8 lg:top-16 lg:left-16 group">
             <BaseActionButton alternate text="Lihat Lokasi" to="#" />
           </div>
-          <figure class="w-full h-full relative">
+          <figure class="relative w-full h-full">
             <div class="absolute left-0 top-0 w-full h-full bg-black/50" />
             <img
               src="https://1.bp.blogspot.com/-AMQxqLQqx3c/Xm8p_Wh9bDI/AAAAAAAAGB0/G_fLMufG5_QGXc2ZSCpiUNS-kenNP1gyACLcBGAsYHQ/s1600/nakoa-cafe-rekomendasi-tempat-nongkrong-di-malang-24-jam.jpg"
@@ -275,33 +301,38 @@ const onSlideNext = () => {
               class="w-full h-full object-cover"
             />
           </figure>
-          <div class="z-[1] absolute bottom-20 left-20">
-            <h3 class="text-4xl font-medium">
+          <div class="z-[1] absolute right-4 bottom-4 left-4 md:right-8 md:left-8 md:bottom-8 lg:right-16 lg:bottom-16 lg:left-16">
+            <h3 class="text-xl md:text-2xl lg:text-4xl font-medium">
               {{ locations[swiperIndex].name }}
             </h3>
-            <p class="font-light">{{ locations[swiperIndex].address }}</p>
+            <p class="font-light text-sm md:text-base">
+              {{ locations[swiperIndex].address }}
+            </p>
           </div>
         </div>
         <!-- ./Location Information -->
 
-        <!-- Location Figure Controls -->
-        <div class="relative w-full h-full">
-          <div class="h-full flex flex-col gap-20 p-20">
+        <div class="relative flex-1 lg:h-full">
+          <div class="h-full flex flex-col gap-4 md:gap-8 lg:gap-16 px-4 md:px-8 lg:px-12 py-8 md:py-16">
             <div class="flex-1 flex flex-col justify-between overflow-hidden">
               <swiper
-                class="w-[400px] h-full mx-auto"
+                class="w-full lg:w-[400px] h-full mx-auto"
                 :slides-per-view="1"
                 @swiper="onSwiper"
                 @slideChangeTransitionEnd="onSlideChange"
               >
                 <swiper-slide v-for="picture in cafePictures" :key="picture">
-                  <img class="w-full h-full object-cover" :src="picture" />
+                  <img
+                    class="w-full aspect-video lg:h-full object-cover"
+                    :src="picture"
+                  />
                 </swiper-slide>
               </swiper>
             </div>
 
-            <!-- Location Button Controls -->
-            <div class="w-[400px] mx-auto flex items-center justify-between">
+            <div
+              class="w-full lg:w-[400px] mx-auto flex items-center justify-between"
+            >
               <button @click="onSlidePrev()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -336,20 +367,15 @@ const onSlideNext = () => {
                 </svg>
               </button>
             </div>
-            <!-- ./Location Button Controls -->
           </div>
         </div>
-        <!-- ./Location Figure Controls -->
       </div>
     </section>
     <!-- ./Section Location -->
 
     <!-- Menu Section -->
-    <section
-      id="menu-section"
-      class="relative w-full h-screen bg-white text-slate-900"
-    >
-      <div class="container mx-auto flex flex-col gap-8 py-16">
+    <section id="menu-section" class="relative w-full bg-white text-slate-900">
+      <div class="container mx-auto flex flex-col gap-8 px-4 md:px-8 lg:px-12 py-8 lg:py-16">
         <BaseHeader>
           <template #title> <BaseHeading text="Menu Best Seller" /> </template>
           <template #action>
@@ -357,7 +383,7 @@ const onSlideNext = () => {
           </template>
         </BaseHeader>
 
-        <div class="grid grid-cols-3 gap-16">
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-16">
           <BestSellerCard
             v-for="menu in bestSellerMenus"
             :key="menu.name"
@@ -371,10 +397,10 @@ const onSlideNext = () => {
     <!-- Cafe Detail Section -->
     <section
       id="cafe-detail-section"
-      class="relative w-full h-auto bg-neutral-900 text-white"
+      class="relative w-full bg-neutral-900 text-white"
     >
-      <div class="container mx-auto py-16">
-        <div class="grid grid-cols-3 gap-24">
+      <div class="container mx-auto px-4 md:px-8 lg:px-12 py-16">
+        <div class="grid md:grid-cols-3 gap-16 md:gap-8 lg:gap-16">
           <CafeDetailCard
             v-for="detail in cafeDetails"
             :key="detail.name"
@@ -386,18 +412,22 @@ const onSlideNext = () => {
     <!-- ./Cafe Detail Section -->
 
     <!-- Gallery Section -->
-    <section class="relative w-full h-auto bg-white text-slate-900">
-      <div class="container mx-auto flex flex-col gap-8 py-16">
+    <section class="relative w-full bg-white text-slate-900">
+      <div
+        class="container mx-auto flex flex-col gap-8 px-4 md:px-8 lg:px-12 py-8 lg:py-16"
+      >
         <BaseHeader>
           <template #title>
-            <BaseHeading text="Ikuti kami di Instagram" />
+            <BaseHeading text="Instagram Kami" />
           </template>
           <template #action>
             <a href="#" class="text-brand">@nakoacafe</a>
           </template>
         </BaseHeader>
 
-        <div class="grid grid-cols-6 gap-8">
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8"
+        >
           <img
             v-for="img in instagramPictures"
             :src="img"

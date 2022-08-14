@@ -29,7 +29,7 @@ const variantClass = computed<string>(() => {
   <component
     :is="to ? NuxtLink : 'button'"
     :to="to"
-    class="py-3 px-4 transition ease-out duration-300"
+    class="inline-block py-3 px-4 transition ease-out duration-300"
     :class="variantClass"
   >
     {{ text }}

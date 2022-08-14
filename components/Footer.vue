@@ -16,8 +16,8 @@ const purchaseChannels = ref([
 
 <template>
   <footer class="w-full h-auto bg-neutral-900 text-white">
-    <div class="container mx-auto">
-      <div class="flex items-start justify-between gap-8 py-16">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12">
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-8 py-8 lg:py-16">
         <NuxtLink to="/">
           <img
             alt="Logo"
@@ -103,8 +103,8 @@ const purchaseChannels = ref([
 
       <!-- Attribution and Copyrights -->
       <div class="container mx-auto border-t border-white py-8">
-        <p class="text-center font-light text-sm">
-          &copy; 2022 Nakoa Cafe - All rights reserved. Website made by
+        <p class="lg:text-center font-light text-xs lg:text-sm">
+          &copy; 2022 Nakoa Cafe - All rights reserved. <br class="md:hidden"> Website made by
           <a
             href="https://fluxt.co"
             class="font-medium hover:text-brand transition ease-out duration-300"

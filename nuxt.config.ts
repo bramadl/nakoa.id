@@ -12,6 +12,10 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
+          href: "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css",
+        },
+        {
+          rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap",
         },
       ],

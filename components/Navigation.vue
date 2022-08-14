@@ -8,22 +8,23 @@ type NavigationLinkType = {
 }[];
 
 const navigationLinks = ref<NavigationLinkType>([
-  { type: "link", to: "/", content: "Home" },
-  { type: "link", to: "/about", content: "About" },
-  { type: "link", to: "/menus", content: "Menus" },
+  { type: "link", to: "/", content: "Beranda" },
+  { type: "link", to: "/about", content: "Tentang" },
+  { type: "link", to: "/menus", content: "Menu" },
   { type: "logo", to: "/", content: null },
-  { type: "link", to: "/blogs", content: "Blogs" },
-  { type: "link", to: "/locations", content: "Locations" },
+  { type: "link", to: "/blogs", content: "Artikel" },
+  { type: "link", to: "/locations", content: "Lokasi" },
 ]);
 </script>
 
 <template>
   <nav class="z-10 absolute top-0 left-0 w-full bg-white text-slate-900">
-    <ul class="h-20 grid grid-cols-7 items-center px-16">
+    <ul class="h-20 flex md:grid grid-cols-7 items-center justify-between px-4 lg:px-16">
       <li
         v-for="(link, index) in navigationLinks"
         :key="index"
         class="flex items-center justify-center"
+        :class="{ 'hidden md:flex': link.type === 'link' }"
       >
         <NuxtLink
           class="font-light hover:text-brand transition ease-out duration-300"
@@ -42,7 +43,15 @@ const navigationLinks = ref<NavigationLinkType>([
         </NuxtLink>
       </li>
       <li class="flex items-center justify-center uppercase text-sm font-light">
-        <a href="#" class="bg-brand text-white py-3 px-4 rounded-md">Contact Us</a>
+        <a
+          href="#"
+          class="hidden md:inline-block border border-brand text-brand hover:bg-brand hover:text-white py-3 px-4 transition ease-out duration-300"
+          >
+            <span class="hidden lg:inline-block">Hubungi Kami</span>
+            <i class="bx bxs-phone lg:hidden"></i>
+          </a
+        >
+        <NavigationMenu />
       </li>
     </ul>
   </nav>

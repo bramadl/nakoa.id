@@ -28,7 +28,7 @@ defineProps<MenuBestSellerProps>();
       </div>
       <img
         :alt="menu.name"
-        class="w-full h-96 object-cover"
+        class="w-full aspect-square lg:h-96 object-cover"
         :src="menu.thumbnail"
       />
     </figure>
