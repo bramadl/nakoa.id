@@ -21,7 +21,12 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@vueuse/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@pinia/nuxt",
+    "@vueuse/nuxt",
+    "@formkit/nuxt",
+  ],
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
   },
