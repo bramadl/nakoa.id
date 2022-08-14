@@ -1,6 +1,5 @@
 import { defineNuxtConfig } from "nuxt";
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   app: {
     head: {
@@ -19,12 +18,9 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    [
-      "@nuxtjs/tailwindcss",
-      {
-        cssPath: "~/assets/css/tailwind.css",
-      },
-    ],
+    ["@nuxtjs/tailwindcss", { cssPath: "~/assets/css/tailwind.css" }],
+    ["@pinia/nuxt"],
+    ["@vueuse/nuxt"],
   ],
   typescript: {
     shim: false,
