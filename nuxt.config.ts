@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@vueuse/nuxt",
     "@formkit/nuxt",
+    "nuxt-lodash",
   ],
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
