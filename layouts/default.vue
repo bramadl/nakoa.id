@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div>
+    <Navigation />
     <slot />
+    <Footer />
   </div>
 </template>
