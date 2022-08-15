@@ -9,16 +9,16 @@ type NavigationLinkType = {
 
 const navigationLinks = ref<NavigationLinkType>([
   { type: "link", to: "/", content: "Beranda" },
-  { type: "link", to: "/about", content: "Tentang" },
+  { type: "link", to: "/tentang", content: "Tentang" },
   { type: "link", to: "/menus", content: "Menu" },
   { type: "logo", to: "/", content: null },
   { type: "link", to: "/blogs", content: "Artikel" },
-  { type: "link", to: "/locations", content: "Lokasi" },
+  { type: "link", to: "/lokasi", content: "Lokasi" },
 ]);
 </script>
 
 <template>
-  <nav class="z-10 absolute top-0 left-0 w-full bg-white text-slate-900">
+  <nav class="z-10 absolute top-0 left-0 w-full bg-white text-slate-900 shadow-md">
     <ul class="h-20 flex md:grid grid-cols-7 items-center justify-between px-4 lg:px-16">
       <li
         v-for="(link, index) in navigationLinks"
@@ -27,11 +27,12 @@ const navigationLinks = ref<NavigationLinkType>([
         :class="{ 'hidden md:flex': link.type === 'link' }"
       >
         <NuxtLink
+          exact-active-class="!font-normal text-brand"
           class="font-light hover:text-brand transition ease-out duration-300"
           :to="link.to"
         >
           <template v-if="link.type === 'link'">
-            <span class="font-light text-sm uppercase">{{ link.content }}</span>
+            <span class="text-sm uppercase">{{ link.content }}</span>
           </template>
           <template v-else>
             <img
